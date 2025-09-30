@@ -2,436 +2,328 @@
 
 <div align="center">
 
-![Career Copilot Banner](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge&logo=openai)
-![Python](https://img.shields.io/badge/Python-3.11-green?style=for-the-badge&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-Latest-teal?style=for-the-badge&logo=fastapi)
+![Career Copilot Banner](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge\&logo=openai)
+![Python](https://img.shields.io/badge/Python-3.11-green?style=for-the-badge\&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-teal?style=for-the-badge\&logo=fastapi)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-*AI-Powered Resume Optimization & Interview Preparation Platform*
-
-Transform your job search with intelligent resume analysis, ATS optimization, and realistic AI-guided mock interviews.
-
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Documentation](#-documentation) • [Contributing](#-contributing)
-
 </div>
+
+# Career Copilot
+
+**AI-Powered Resume Optimization & Interview Preparation Platform**
+
+> Transform your job search with intelligent resume analysis, ATS optimization, and realistic AI-guided mock interviews.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Technology Stack](#-technology-stack)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [Project Structure](#-project-structure)
-- [Team](#-team)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
+* [Overview](#-overview)
+* [Features](#-features)
+* [Technology Stack](#-technology-stack)
+* [Architecture](#-architecture)
+* [Quick Start (Dev)](#-quick-start-dev)
+* [Installation](#-installation)
+* [Usage](#-usage)
+* [API Documentation](#-api-documentation)
+* [Project Structure](#-project-structure)
+* [Development](#-development)
+* [Known Issues & Suggested Fixes](#-known-issues--suggested-fixes)
+* [Contributing](#-contributing)
+* [License](#-license)
+* [Acknowledgments](#-acknowledgments)
 
 ---
 
 ## 🎯 Overview
 
-*Career Copilot* is an advanced AI-driven platform that revolutionizes job preparation by combining cutting-edge language models, vector-based skill analysis, and speech recognition technologies. Whether you're optimizing your resume for ATS systems or preparing for technical interviews, Career Copilot provides personalized, intelligent assistance every step of the way.
+Career Copilot is an AI-driven platform that helps users optimize resumes for ATS, perform skill-gap analysis, and practice realistic mock interviews (including speech-based interactions).
 
-### Why Career Copilot?
-
-- *End-to-End Solution*: From resume parsing to mock interviews, everything in one platform
-- *AI-Powered Intelligence*: Leverages GPT-4 and LLAMA 3.2 for human-like interactions
-- *Real-Time Feedback*: Get instant analysis and improvement suggestions
-- *Voice-Based Interviews*: Practice with realistic audio-based mock interviews
-- *ATS Optimization*: Ensure your resume passes automated screening systems
+It combines LLMs, vector search for skills, and audio processing to create a feedback loop for continuous improvement.
 
 ---
 
 ## ✨ Features
 
-### 📄 Resume Management
+* **Resume Management**
 
-- *Smart Upload & Parsing*
-  - Support for PDF, DOCX, and TXT formats
-  - Automatic extraction of skills, experience, and education
-  - Secure file handling with UUID-based storage
+  * Upload PDFs/DOCX/TXT and parse sections (skills, experience, education).
+  * ATS-aware rewrites with keyword highlighting and action-verb suggestions.
+* **AI Interview System**
 
-- *AI Resume Optimization*
-  - LLM-powered resume rewriting aligned with job descriptions
-  - Keyword analysis and ATS-friendly formatting
-  - Action verb suggestions and content enhancement
+  * Dynamic mock interviews generated from the candidate's resume.
+  * Speech-to-text (STT) and text-to-speech (TTS) support for natural practice.
+  * Session tracking, scoring, and analytics.
+* **Skill Gap & Learning Roadmap**
 
-- *Skill Gap Analysis*
-  - Vector-based skill benchmarking
-  - Personalized learning roadmap generation
-  - Industry-standard competency mapping
+  * Vector-based skill comparison and personalized learning suggestions.
+* **Security & Reliability**
 
-### 🎤 AI Interview System
-
-- *Interactive Mock Interviews*
-  - Speech-to-text conversion for natural responses
-  - Text-to-speech AI interviewer
-  - Dynamic question generation based on your resume
-
-- *Session Management*
-  - Track interview progress and question count
-  - Save and retrieve interview sessions
-  - Real-time feedback and performance analytics
-
-- *Audio Processing*
-  - High-quality speech recognition via Google STT
-  - Natural-sounding TTS responses
-  - Automatic audio file management
-
-### 🔒 Security & Performance
-
-- CORS middleware for secure cross-origin requests
-- Custom security headers (X-Content-Type-Options, X-Frame-Options)
-- Robust error handling and logging
-- Efficient concurrent session management
+  * CORS, security headers, robust logging, and session management.
 
 ---
 
 ## 🛠 Technology Stack
 
-<table>
-<tr>
-<td align="center" width="25%">
-<b>Frontend</b><br>
-HTML<br>
-Jinja2 Templates
-</td>
-<td align="center" width="25%">
-<b>Backend</b><br>
-FastAPI<br>
-Python 3.11
-</td>
-<td align="center" width="25%">
-<b>Database</b><br>
-MongoDB
-</td>
-<td align="center" width="25%">
-<b>Deployment</b><br>
-Uvicorn<br>
-Docker
-</td>
-</tr>
-<tr>
-<td align="center" width="25%">
-<b>AI/LLM</b><br>
-LLAMA 3.2<br>
-OpenAI GPT-4<br>
-Ollama
-</td>
-<td align="center" width="25%">
-<b>Speech</b><br>
-Google STT<br>
-TTS Models
-</td>
-<td align="center" width="25%">
-<b>Vector DB</b><br>
-Embeddings<br>
-Similarity Search
-</td>
-<td align="center" width="25%">
-<b>Tools</b><br>
-Docker<br>
-Git
-</td>
-</tr>
-</table>
+| Area       | Technology                                                        |
+| ---------- | ----------------------------------------------------------------- |
+| Frontend   | HTML, Jinja2 Templates (optionally React + Vite/Tailwind for SPA) |
+| Backend    | FastAPI, Python 3.11                                              |
+| Database   | MongoDB                                                           |
+| Deployment | Uvicorn, Docker                                                   |
+| AI / LLM   | Ollama (LLama 3.2), OpenAI GPT-4 (optional)                       |
+| Speech     | Google STT, TTS models                                            |
+| Vector DB  | embeddings + similarity search                                    |
 
 ---
 
 ## 🏗 Architecture
 
-
-┌─────────────────┐
-│   User Input    │
-│  (Resume/Audio) │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   FastAPI       │
-│   Backend       │
-├─────────────────┤
-│ • Resume Parser │
-│ • Session Mgmt  │
-│ • API Routes    │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-    ▼         ▼
-┌────────┐ ┌──────────┐
-│ MongoDB│ │  AI/LLM  │
-│        │ │  Engine  │
-│ • User │ │ • GPT-4  │
-│ • Data │ │ • LLAMA  │
-└────────┘ └──────────┘
-              │
-         ┌────┴────┐
-         │         │
-         ▼         ▼
-    ┌─────────┐ ┌──────┐
-    │ STT/TTS │ │Vector│
-    │ Audio   │ │  DB  │
-    └─────────┘ └──────┘
-
+```
+User Input (Resume / Audio)
+        |
+    FastAPI Backend
+    |  - resume parsing
+    |  - interview agent
+    |  - audio processing
+    |
+  --------------------------
+  |                        |
+MongoDB                 LLM Engine (Ollama / OpenAI)
+  |                        |
+Uploads (resumes/audio)  Vector DB (embeddings / search)
+```
 
 ---
 
-## 🚀 Installation
+## ✅ Quick Start (Dev)
 
-### Prerequisites
+**Unix / macOS**
 
-- Python 3.11 or higher
-- MongoDB instance
-- Ollama (for LLAMA models)
-- OpenAI API key (optional, for GPT-4)
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+# If main.py is at repo root:
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# If you moved entrypoint to app/main.py:
+# uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
 
-### Step 1: Clone the Repository
+**Windows (PowerShell)**
 
-bash
+```powershell
+python -m venv venv
+venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Visit [http://localhost:8000](http://localhost:8000) or [http://localhost:8000/docs](http://localhost:8000/docs) for Swagger UI.
+
+---
+
+## 🛠 Installation
+
+1. Clone the repository
+
+```bash
 git clone https://github.com/yourusername/career-copilot.git
 cd career-copilot
+```
 
+2. Create `.env` (example)
 
-### Step 2: Create Virtual Environment
+```env
+MONGODB_URI=mongodb://localhost:27017/career_copilot
+OPENAI_API_KEY=your_openai_api_key_here  # optional
+OLLAMA_ENABLED=true
+OLLAMA_HOST=http://localhost:11434
+SECRET_KEY=your_random_secret
+```
 
-bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+3. Install dependencies and run (see Quick Start above).
 
+4. (Optional) Docker
 
-### Step 3: Install Dependencies
-
-bash
-pip install -r requirements.txt
-
-
-### Step 4: Set Up Environment Variables
-
-Create a .env file in the root directory:
-
-env
-MONGODB_URI=mongodb://localhost:27017/
-OPENAI_API_KEY=your_openai_api_key_here
-GROQ_API_KEY=your_groq_api_key_here
-
-
-### Step 5: Install and Start Ollama
-
-bash
-# Install Ollama (visit https://ollama.ai for instructions)
-# Pull required models
-ollama pull llama3.2
-
-
-### Step 6: Run the Application
-
-bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-
-
-Visit http://localhost:8000 in your browser!
+```bash
+# Build
+docker build -t career-copilot:latest .
+# Run (example)
+docker run --env-file .env -p 8000:8000 career-copilot:latest
+```
 
 ---
 
-## 🎮 Usage
+## 🧾 Usage (API Examples)
 
-### Upload and Optimize Resume
+**Upload Resume**
 
-1. Navigate to the dashboard
-2. Upload your resume (PDF, DOCX, or TXT)
-3. Receive AI-powered optimization suggestions
-4. Download your enhanced resume
-
-### Start Mock Interview
-
-1. Upload your resume
-2. Click "Start Interview"
-3. Answer questions using your microphone
-4. Receive real-time feedback and follow-up questions
-5. Review session analytics and performance
-
-### API Examples
-
-#### Upload Resume
-bash
+```bash
 curl -X POST "http://localhost:8000/api/upload-resume" \
   -F "file=@resume.pdf"
+```
 
+**Start Interview Session**
 
-#### Start Interview Session
-bash
+```bash
 curl -X POST "http://localhost:8000/upload_resume/" \
   -F "resume=@resume.pdf" \
   -F "model_choice=llama3.2"
+```
 
+**Submit Audio Answer**
 
-#### Submit Audio Answer
-bash
+```bash
 curl -X POST "http://localhost:8000/ask/" \
   -F "session_id=your-session-id" \
   -F "audio=@answer.wav"
-
+```
 
 ---
 
 ## 📚 API Documentation
 
-Once the application is running, access the interactive API documentation:
+* Swagger UI: `http://localhost:8000/docs`
+* ReDoc: `http://localhost:8000/redoc`
 
-- *Swagger UI*: http://localhost:8000/docs
-- *ReDoc*: http://localhost:8000/redoc
+**Key Endpoints (examples)**
 
-### Key Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /health | Check server status |
-| POST | /api/upload-resume | Upload and parse resume |
-| POST | /upload_resume/ | Initialize interview session |
-| POST | /ask/ | Submit audio answer |
-| GET | /audio/{session_id}/{question_number} | Retrieve audio response |
-| DELETE | /session/{session_id} | End interview session |
-| GET | /session/{session_id}/status | Check session progress |
+| Method | Endpoint                                | Description                  |
+| -----: | --------------------------------------- | ---------------------------- |
+|    GET | `/health`                               | Server health check          |
+|   POST | `/api/upload-resume`                    | Upload and parse resume      |
+|   POST | `/upload_resume/`                       | Initialize interview session |
+|   POST | `/ask/`                                 | Submit audio answer          |
+|    GET | `/audio/{session_id}/{question_number}` | Retrieve recorded answer     |
+| DELETE | `/session/{session_id}`                 | End interview session        |
+|    GET | `/session/{session_id}/status`          | Session progress             |
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure 
 
+> **Note:** your original structure mixes files at root and inside `app/`. I recommend a single entrypoint (either `main.py` at root or `app/main.py`) and `app/` containing package code.
 
+```
 career-copilot/
-│
-├── main.py                 # FastAPI application entry point
-├── requirements.txt        # Python dependencies
-├── .env                    # Environment variables
-├── Dockerfile             # Docker configuration
-│
+├── Dockerfile
+├── README.md  # this file
+├── requirements.txt
+├── .env.example
+├── main.py                # optional root entrypoint (or use app/main.py)
 ├── app/
+│   ├── __init__.py
+│   ├── main.py            # FastAPI app factory (recommended)
 │   ├── routers/           # API route handlers
-│   ├── models/            # Data models and schemas
-│   ├── services/          # Business logic
+│   │   ├── resume.py
+│   │   ├── interview.py
+│   │   └── audio.py
+│   ├── models/
+│   │   ├── resume.py
+│   │   ├── session.py
+│   │   └── user.py
+│   ├── services/
 │   │   ├── resume_parser.py
 │   │   ├── interview_agent.py
-│   │   └── audio_processor.py
-│   └── utils/             # Helper functions
-│
-├── templates/             # Jinja2 HTML templates
-├── static/                # CSS, JS, images
-├── uploads/               # Temporary file storage
-└── tests/                 # Unit and integration tests
+│   │   ├── audio_processor.py
+│   │   └── llm_service.py
+│   └── utils/
+│       ├── file_handler.py
+│       ├── validators.py
+│       └── logger.py
+├── templates/             # Jinja2 templates (if used)
+│   ├── index.html
+│   ├── dashboard.html
+│   └── interview.html
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── uploads/
+│   ├── resumes/
+│   └── audio/
+└── tests/
+    ├── test_resume.py
+    ├── test_interview.py
+    └── test_api.py
+```
 
+**Entrypoint guidance**
 
----
+* If you keep `main.py` at repo root, use: `uvicorn main:app`.
+* If you move to `app/main.py`, use: `uvicorn app.main:app`.
 
-## 👥 Team
+**Why reorganize?**
 
-<table>
-<tr>
-<td align="center">
-<b>Karunyan V T</b><br>
-</td>
-<td align="center">
-<b>Jaya Jayanthan S</b><br>
-</td>
-<td align="center">
-<b>Naveen G G</b><br>
-</td>
-</tr>
-<tr>
-<td align="center">
-<b>Dharshan H</b><br>
-</td>
-<td align="center">
-<b>Keerthi Selvan S</b><br>
-</td>
-<td align="center">
-<b>Hari K</b><br>
-</td>
-</tr>
-</table>
+* Keeps package imports predictable (use `from app.services import ...`).
+* Simplifies Dockerfile and module resolution.
+* Makes tests and CI easier to configure.
 
 ---
 
-## 🗺 Roadmap
+## 🐞 Known Issues & Suggested Fixes
 
-### Phase 1 (Current)
-- ✅ Resume upload and parsing
-- ✅ AI-powered resume optimization
-- ✅ Voice-based mock interviews
-- ✅ Session management
+1. **"Project structure is not proper"**
 
-### Phase 2 (Upcoming)
-- 🔄 Job recommendation engine
-- 🔄 Industry trends dashboard
-- 🔄 Advanced analytics and insights
-- 🔄 Multi-language support
+   * Move all application code under `app/` and make `main.py` an entrypoint that imports from `app`.
+   * Update `PYTHONPATH` or use `pip install -e .` during development to avoid relative import issues.
+2. **Git submodule warning**
 
-### Phase 3 (Future)
-- 📋 Company-specific interview preparation
-- 📋 Salary negotiation assistant
-- 📋 Career path visualization
-- 📋 Integration with job boards
+   * If you accidentally added a nested Git repo (e.g., `interviewbot_backend`), either remove it from the parent repo or properly add it as a submodule: `git submodule add <url> path`.
+3. **Static files & templates**
+
+   * Ensure `templates/` and `static/` are referenced correctly when using `FastAPI`'s `Jinja2Templates` and `StaticFiles`.
+4. **Environment management in Docker**
+
+   * Use an `.env` file or pass environment variables at runtime; don't hardcode secrets.
+
+---
+
+## 🧑‍💻 Development
+
+Recommended developer workflow:
+
+```bash
+# create editable install so imports resolve
+python -m pip install -e .
+# run tests
+pytest -q
+# run linting
+flake8 app
+# run the server (see Quick Start)
+```
+
+Consider adding `pre-commit` hooks for formatting and linting (black, isort, flake8).
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/Awesome`
+3. Commit your changes: `git commit -m "Add awesome feature"`
+4. Push and open a Pull Request
 
-1. *Fork the repository*
-2. *Create your feature branch*
-   bash
-   git checkout -b feature/AmazingFeature
-   
-3. *Commit your changes*
-   bash
-   git commit -m 'Add some AmazingFeature'
-   
-4. *Push to the branch*
-   bash
-   git push origin feature/AmazingFeature
-   
-5. *Open a Pull Request*
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and development process.
+Please follow the code style and include tests for new features.
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- OpenAI for GPT-4 API
-- Meta for LLAMA models
-- FastAPI community
-- All our contributors and supporters
+* OpenAI for GPT models
+* Meta for LLAMA models
+* FastAPI community
+* All contributors
 
 ---
 
-## 📞 Contact & Support
 
-- *Issues*: [GitHub Issues](https://github.com/yourusername/career-copilot/issues)
-- *Discussions*: [GitHub Discussions](https://github.com/yourusername/career-copilot/discussions)
-- *Email*: support@careercopilot.ai
 
----
-
-<div align="center">
-
-*Made with ❤ by the Career Copilot Team*
-
-⭐ Star us on GitHub — it motivates us a lot!
-
-[Back to Top](#-career-copilot)
-
-</div>
