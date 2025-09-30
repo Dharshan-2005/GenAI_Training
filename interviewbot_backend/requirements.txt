@@ -1,0 +1,1 @@
+fastapi uvicorn[standard] python-multipart python-dotenv langchain-google-genai PyMuPDF python-docx speechrecognition pyaudio
